@@ -99,6 +99,7 @@ body {
   text-transform: uppercase;
 }
 
-.pokedex-summary p {
-  margin-top: 1rem;
+.pokedex-property {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
 }
