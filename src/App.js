@@ -15,7 +15,7 @@ function App() {
   console.log("Pokedex rendering...")
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=1000")
       .then(response => response.json())
       .then(data => {
         setPokemon(data.results);

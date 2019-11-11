@@ -19,9 +19,9 @@ function PokedexDescription(props) {
   let description = null;
   if (speciesDetails != null) {
     description = speciesDetails.flavor_text_entries.find(
-    entry => entry.language.name === "en"
-  ).flavor_text;
-}
+      entry => entry.language.name === "en"
+    ).flavor_text;
+  }
 
   return (
     <div className="pokedex-description">
