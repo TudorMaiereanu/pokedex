@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PokedexEvolutionChain from './PokedexEvolutionChain';
 import '../App.css';
 
 function PokedexDescription(props) {
@@ -17,15 +18,18 @@ function PokedexDescription(props) {
   }, [selectedPokemon]);
 
   let description = null;
+  let url = null;
   if (speciesDetails != null) {
     description = speciesDetails.flavor_text_entries.find(
       entry => entry.language.name === "en"
     ).flavor_text;
+    url = speciesDetails.evolution_chain.url;
   }
 
   return (
     <div className="pokedex-description">
       <p>{description}</p>
+      <PokedexEvolutionChain evolutionChainUrl={url} />
     </div>
   );
 }
