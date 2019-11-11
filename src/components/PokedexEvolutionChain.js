@@ -17,7 +17,7 @@ function PokedexEvolutionChain(props) {
   }, [evolutionChainUrl]);
 
   // TO REFACTOR !!!!!
-  let evolutions = [];
+  let evolutions;
   if (evolutionDetails != null) {
     let evolution = evolutionDetails;
     evolutions = [
@@ -39,12 +39,29 @@ function PokedexEvolutionChain(props) {
       });
     });
   }
-  // TO REFACTOR !!!!!
   
 
   return (
-    <p>{JSON.stringify(evolutions)}</p>
+    <div className="pokedex-evolution">
+      <p>Evolutions:</p>
+      {evolutions && evolutions.map(firstEvolutionObj => (
+        <div>
+          <button className="first-evolution">{'1.' + firstEvolutionObj.name}</button>
+          {firstEvolutionObj && firstEvolutionObj.evolutions.map((secondEvolutionObj) => (
+            <div>
+              <button className="second-evolution">{'2.' + secondEvolutionObj.name}</button>
+              {secondEvolutionObj && secondEvolutionObj.evolutions.map((thirdEvolutionObj) => (
+                <button className="third-evolution">{'3.' + thirdEvolutionObj.name}</button>
+              ))}
+            </div>
+           ) )}
+
+        </div>
+      ) )}
+    </div>
   );
+
+  // TO REFACTOR !!!!!
 }
 
 

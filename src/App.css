@@ -103,3 +103,39 @@ body {
   margin-top: 0.5rem;
   font-size: 0.75rem;
 }
+
+.pokedex-evolution {
+  margin-top: 0.5rem;
+}
+.pokedex-evolution button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: PokeFont, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5rem;
+  padding: 16px 16px 8px 16px;
+  float: left;
+  text-transform: uppercase;
+}
+
+.pokedex-evolution button:hover{
+  background: yellow;
+  color: black;
+}
+.pokedex-evolution button:active{
+  background: #ab0712;
+  color: black;
+}
+
+.first-evolution {
+  width: 100%;
+}
+
+.second-evolution {
+  width: 100%;
+}
+
+.third-evolution {
+  width: 100%;
+}
