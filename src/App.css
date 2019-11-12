@@ -104,9 +104,10 @@ body {
   font-size: 0.75rem;
 }
 
-.pokedex-evolution {
-  margin-top: 0.5rem;
+.pokedex-evolution p{
+  margin-top: 2rem;
 }
+
 .pokedex-evolution button {
   background: none;
   border: none;
@@ -128,24 +129,11 @@ body {
   color: black;
 }
 
-.first-evolution {
+.evolution {
   width: 100%;
 }
 
-.second-evolution {
-  width: 100%;
-}
-
-.third-evolution {
-  width: 100%;
-}
-
-.second-evolution-hidden {
-  width: 100%;
-  display: none;
-}
-
-.third-evolution-hidden {
+.evolution-hidden {
   width: 100%;
   display: none;
 }
