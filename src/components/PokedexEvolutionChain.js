@@ -70,9 +70,9 @@ function PokedexEvolutionChain(props) {
             <button className="evolution">
               {'1.' + firstEvolutionObj.name}
             </button>
-            <button><p className="look-into">&#128270;</p></button>
-            <button><p className="look-into" onClick={() => onClickFirstEvolution()}>&#128317;</p></button>
-            <button><p className="look-into">&#128316;</p></button>
+            <button><p>&#128270;</p></button>
+            <button><p onClick={() => onClickFirstEvolution()}>&#128317;</p></button>
+            <button><p>&#128316;</p></button>
           </div>
 
           {firstEvolutionObj && firstEvolutionObj.evolutions.map((secondEvolutionObj) => (
@@ -81,12 +81,14 @@ function PokedexEvolutionChain(props) {
                 <button className={secondEvolutionClass}>
                   {'2.' + secondEvolutionObj.name}
                 </button>
-                <button><p className="look-into" onClick={() => onClickSecondEvolution()}>&#128317;</p></button>
+                <button><p className={secondEvolutionClass}>&#128270;</p></button>
+                <button><p className={secondEvolutionClass} onClick={() => onClickSecondEvolution()}>&#128317;</p></button>
               </div>
 
               {secondEvolutionObj && secondEvolutionObj.evolutions.map((thirdEvolutionObj) => (
                 <div className="evolution-button-box">
                   <button className={thirdEvolutionClass}>{'3.' + thirdEvolutionObj.name}</button>
+                  <button><p className={thirdEvolutionClass}>&#128270;</p></button>
                 </div>
               ))}
 
