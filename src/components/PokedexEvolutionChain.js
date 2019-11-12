@@ -7,6 +7,22 @@ function PokedexEvolutionChain(props) {
   const [secondEvolutionClass, setSecondEvolutionClass] = useState("evolution-hidden");
   const [thirdEvolutionClass, setThirdEvolutionClass] = useState("evolution-hidden");
 
+  const onClickFirstEvolution = () => {
+    if (secondEvolutionClass === "evolution-hidden") {
+      setSecondEvolutionClass("evolution");
+    } else {
+      setSecondEvolutionClass("evolution-hidden")
+      setThirdEvolutionClass("evolution-hidden")
+    }
+  };
+
+  const onClickSecondEvolution = () => {
+    if (thirdEvolutionClass === "evolution-hidden") {
+      setThirdEvolutionClass("evolution");
+    } else {
+      setThirdEvolutionClass("evolution-hidden")
+    }
+  };
 
   useEffect(() => {
     if (evolutionChainUrl != null) {
@@ -50,27 +66,28 @@ function PokedexEvolutionChain(props) {
       {evolutions && <p>Evolution chain:</p>}
       {evolutions && evolutions.map(firstEvolutionObj => (
         <div>
-          <button className="evolution" onClick={() => {
-            if (secondEvolutionClass === "evolution-hidden") {
-              setSecondEvolutionClass("evolution");
-            } else {
-              setSecondEvolutionClass("evolution-hidden")
-              setThirdEvolutionClass("evolution-hidden")
-            }
-          }}>{'1.' + firstEvolutionObj.name}</button>
+          <div className="evolution-button-box">
+            <button className="evolution">
+              {'1.' + firstEvolutionObj.name}
+            </button>
+            <button><p className="look-into">&#128270;</p></button>
+            <button><p className="look-into" onClick={() => onClickFirstEvolution()}>&#128317;</p></button>
+            <button><p className="look-into">&#128316;</p></button>
+          </div>
 
           {firstEvolutionObj && firstEvolutionObj.evolutions.map((secondEvolutionObj) => (
-            <div className = "evolution-box">
-              <button className={secondEvolutionClass} onClick={() => {
-                if (thirdEvolutionClass === "evolution-hidden") {
-                  setThirdEvolutionClass("evolution");
-                } else {
-                  setThirdEvolutionClass("evolution-hidden")
-                }
-              }}>{'2.' + secondEvolutionObj.name}</button>
+            <div>
+              <div className="evolution-button-box">
+                <button className={secondEvolutionClass}>
+                  {'2.' + secondEvolutionObj.name}
+                </button>
+                <button><p className="look-into" onClick={() => onClickSecondEvolution()}>&#128317;</p></button>
+              </div>
 
               {secondEvolutionObj && secondEvolutionObj.evolutions.map((thirdEvolutionObj) => (
-                <button className={thirdEvolutionClass}>{'3.' + thirdEvolutionObj.name}</button>
+                <div className="evolution-button-box">
+                  <button className={thirdEvolutionClass}>{'3.' + thirdEvolutionObj.name}</button>
+                </div>
               ))}
 
             </div>

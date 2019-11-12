@@ -104,7 +104,7 @@ body {
   font-size: 0.75rem;
 }
 
-.pokedex-evolution p{
+.pokedex-evolution {
   margin-top: 2rem;
 }
 
@@ -124,16 +124,27 @@ body {
   background: yellow;
   color: black;
 }
+
 .pokedex-evolution button:active{
   background: #ab0712;
   color: black;
 }
 
 .evolution {
-  width: 100%;
 }
 
 .evolution-hidden {
-  width: 100%;
   display: none;
+}
+
+.evolution-button-box {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.look-into {
+  font-size: 1.5rem;
 }
