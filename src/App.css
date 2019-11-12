@@ -139,3 +139,13 @@ body {
 .third-evolution {
   width: 100%;
 }
+
+.second-evolution-hidden {
+  width: 100%;
+  display: none;
+}
+
+.third-evolution-hidden {
+  width: 100%;
+  display: none;
+}

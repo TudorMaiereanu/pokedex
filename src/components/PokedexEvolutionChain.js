@@ -4,6 +4,9 @@ import '../App.css';
 function PokedexEvolutionChain(props) {
   const { evolutionChainUrl } = props;
   const [evolutionDetails, setEvolutionDetails] = useState(null);
+  const [secondEvolutionClass, setSecondEvolutionClass] = useState("second-evolution-hidden");
+  const [thirdEvolutionClass, setThirdEvolutionClass] = useState("third-evolution-hidden");
+
 
   useEffect(() => {
     if (evolutionChainUrl != null) {
@@ -12,6 +15,8 @@ function PokedexEvolutionChain(props) {
         .then(response => response.json())
         .then(data => {
             setEvolutionDetails(data.chain);
+            setSecondEvolutionClass("second-evolution-hidden")
+            setThirdEvolutionClass("third-evolution-hidden")
         });
     }
   }, [evolutionChainUrl]);
@@ -40,18 +45,30 @@ function PokedexEvolutionChain(props) {
     });
   }
   
-
   return (
     <div className="pokedex-evolution">
       <p>Evolutions:</p>
       {evolutions && evolutions.map(firstEvolutionObj => (
         <div>
-          <button className="first-evolution">{'1.' + firstEvolutionObj.name}</button>
+          <button className="first-evolution" onClick={() => {
+            if (secondEvolutionClass === "second-evolution-hidden") {
+              setSecondEvolutionClass("second-evolution");
+            } else {
+              setSecondEvolutionClass("second-evolution-hidden")
+              setThirdEvolutionClass("third-evolution-hidden")
+            }
+          }}>{'1.' + firstEvolutionObj.name}</button>
           {firstEvolutionObj && firstEvolutionObj.evolutions.map((secondEvolutionObj) => (
             <div>
-              <button className="second-evolution">{'2.' + secondEvolutionObj.name}</button>
+              <button className={secondEvolutionClass} onClick={() => {
+                if (thirdEvolutionClass === "third-evolution-hidden") {
+                  setThirdEvolutionClass("third-evolution");
+                } else {
+                  setThirdEvolutionClass("third-evolution-hidden")
+                }
+              }}>{'2.' + secondEvolutionObj.name}</button>
               {secondEvolutionObj && secondEvolutionObj.evolutions.map((thirdEvolutionObj) => (
-                <button className="third-evolution">{'3.' + thirdEvolutionObj.name}</button>
+                <button className={thirdEvolutionClass}>{'3.' + thirdEvolutionObj.name}</button>
               ))}
             </div>
            ) )}
