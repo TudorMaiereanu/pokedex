@@ -6,21 +6,27 @@ function PokedexEvolutionChain(props) {
   const [evolutionDetails, setEvolutionDetails] = useState(null);
   const [secondEvolutionClass, setSecondEvolutionClass] = useState("evolution-hidden");
   const [thirdEvolutionClass, setThirdEvolutionClass] = useState("evolution-hidden");
+  const [showMoreFirstEmojiValue, setShowMoreFirstEmojiValue] = useState(0x1F53D);
+  const [showMoreSecondEmojiValue, setShowMoreSecondEmojiValue] = useState(0x1F53D);
 
   const onClickFirstEvolution = () => {
     if (secondEvolutionClass === "evolution-hidden") {
       setSecondEvolutionClass("evolution");
+      setShowMoreFirstEmojiValue(0x1F53C);
     } else {
-      setSecondEvolutionClass("evolution-hidden")
-      setThirdEvolutionClass("evolution-hidden")
+      setSecondEvolutionClass("evolution-hidden");
+      setThirdEvolutionClass("evolution-hidden");
+      setShowMoreFirstEmojiValue(0x1F53D);
     }
   };
 
   const onClickSecondEvolution = () => {
     if (thirdEvolutionClass === "evolution-hidden") {
       setThirdEvolutionClass("evolution");
+      setShowMoreSecondEmojiValue(0x1F53C);
     } else {
-      setThirdEvolutionClass("evolution-hidden")
+      setThirdEvolutionClass("evolution-hidden");
+      setShowMoreSecondEmojiValue(0x1F53C);
     }
   };
 
@@ -71,8 +77,7 @@ function PokedexEvolutionChain(props) {
               {'1.' + firstEvolutionObj.name}
             </button>
             <button><p>&#128270;</p></button>
-            <button><p onClick={() => onClickFirstEvolution()}>&#128317;</p></button>
-            <button><p>&#128316;</p></button>
+            <button><p onClick={() => onClickFirstEvolution()}>{String.fromCodePoint(showMoreFirstEmojiValue)}</p></button>
           </div>
 
           {firstEvolutionObj && firstEvolutionObj.evolutions.map((secondEvolutionObj) => (
@@ -82,7 +87,7 @@ function PokedexEvolutionChain(props) {
                   {'2.' + secondEvolutionObj.name}
                 </button>
                 <button><p className={secondEvolutionClass}>&#128270;</p></button>
-                <button><p className={secondEvolutionClass} onClick={() => onClickSecondEvolution()}>&#128317;</p></button>
+                <button><p className={secondEvolutionClass} onClick={() => onClickSecondEvolution()}>{String.fromCodePoint(showMoreSecondEmojiValue)}</p></button>
               </div>
 
               {secondEvolutionObj && secondEvolutionObj.evolutions.map((thirdEvolutionObj) => (
