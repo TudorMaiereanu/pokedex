@@ -18,6 +18,7 @@ function PokedexEvolutionChain(props) {
       setSecondEvolutionClass("evolution-hidden");
       setThirdEvolutionClass("evolution-hidden");
       setShowMoreFirstEmojiValue(0x1F53D);
+      setShowMoreSecondEmojiValue(0x1F53D);
     }
   };
 
@@ -27,7 +28,7 @@ function PokedexEvolutionChain(props) {
       setShowMoreSecondEmojiValue(0x1F53C);
     } else {
       setThirdEvolutionClass("evolution-hidden");
-      setShowMoreSecondEmojiValue(0x1F53C);
+      setShowMoreSecondEmojiValue(0x1F53D);
     }
   };
 
