@@ -139,7 +139,7 @@ body {
 
 .evolution-button-box {
   width: fit-content;
-  margin: auto;
+  /* margin: auto; */
   margin-bottom: 0.5rem;
 }
 
