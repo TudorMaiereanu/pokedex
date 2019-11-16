@@ -120,16 +120,6 @@ body {
   text-transform: uppercase;
 }
 
-/* .pokedex-evolution button:hover{
-  background: yellow;
-  color: black;
-}
-
-.pokedex-evolution button:active{
-  background: #ab0712;
-  color: black;
-} */
-
 .evolution {
   width: 15rem;
   display: inline;
