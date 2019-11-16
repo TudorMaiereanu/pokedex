@@ -20,7 +20,7 @@ function PokedexSummary(props) {
     <div className="pokedex-summary">
       {details != null && (
         <>
-          <h1>{details.name}</h1>
+          <h1>{details.id + "." + details.name}</h1>
           {statsList.map(stat => 
               <p className="pokedex-property">
                 {`${stat.name}: ${stat.value}`}
