@@ -3,7 +3,7 @@ import PokedexEvolutionChain from './PokedexEvolutionChain';
 import '../App.css';
 
 function PokedexDescription(props) {
-  const { selectedPokemon } = props;
+  const { selectedPokemon, setSelectedPokemon } = props;
   const [speciesDetails, setSpeciesDetails] = useState(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function PokedexDescription(props) {
   return (
     <div className="pokedex-description">
       <p>{description}</p>
-      <PokedexEvolutionChain evolutionChainUrl={url} />
+      <PokedexEvolutionChain evolutionChainUrl={url} setSelectedPokemon={setSelectedPokemon}/>
     </div>
   );
 }

@@ -40,7 +40,7 @@ function App() {
           selectedPokemon={selectedPokemon}
           setSelectedPokemon={setSelectedPokemon}
         />
-      <PokedexDescription selectedPokemon={selectedPokemon}/>
+      <PokedexDescription selectedPokemon={selectedPokemon} setSelectedPokemon={setSelectedPokemon}/>
       <PokedexImage details={details}/>
       <PokedexSummary details={details}/>
     </div>
