@@ -131,7 +131,7 @@ body {
 } */
 
 .evolution {
-  width: 10rem;
+  width: 15rem;
   display: inline;
   text-align: left;
 }
@@ -147,10 +147,6 @@ body {
 
 .evolution-button-box p {
   font-size: 1.5rem;
-}
-
-.look-into-emoji {
-  margin-left: 3rem;
 }
 
 .look-into-emoji:hover {
