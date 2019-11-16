@@ -120,7 +120,7 @@ body {
   text-transform: uppercase;
 }
 
-.pokedex-evolution button:hover{
+/* .pokedex-evolution button:hover{
   background: yellow;
   color: black;
 }
@@ -128,9 +128,12 @@ body {
 .pokedex-evolution button:active{
   background: #ab0712;
   color: black;
-}
+} */
 
 .evolution {
+  width: 10rem;
+  display: inline;
+  text-align: left;
 }
 
 .evolution-hidden {
@@ -139,10 +142,29 @@ body {
 
 .evolution-button-box {
   width: fit-content;
-  /* margin: auto; */
   margin-bottom: 0.5rem;
 }
 
 .evolution-button-box p {
   font-size: 1.5rem;
+}
+
+.look-into-emoji {
+  margin-left: 3rem;
+}
+
+.look-into-emoji:hover {
+  text-shadow: 0.4rem 0.4rem 0rem grey;
+}
+
+.look-into-emoji:active {
+  text-shadow: 0.4rem 0.4rem 0rem #ab0712;
+}
+
+.arrow-emoji:hover {
+  text-shadow: 0rem 0rem 2rem white;
+}
+
+.arrow-emoji:active {
+  text-shadow: 0rem 0rem 1.5rem #ab0712;
 }
