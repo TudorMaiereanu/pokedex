@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 
 const collectStats = (stats) => {
@@ -12,10 +12,18 @@ const collectStats = (stats) => {
 
   return statsList;
 };
+
 function PokedexSummary(props) {
-  const expandEmojiValue = 0x1F4A2;
   const { details } = props;
+  const [expandButtonClass, setExpandButtonClass] = useState("expand-button-hidden");
+  const expandEmojiValue = 0x1F4A2;
   const statsList = details ? collectStats(details.stats) : [];
+
+  useEffect(() => {
+    if (details != null) {
+      setExpandButtonClass("expand-button");
+    }
+  }, [details]);
   
   return (
     <div className="pokedex-summary">
@@ -29,7 +37,7 @@ function PokedexSummary(props) {
           )}
         </>
       )}
-      <button><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
+      <button className={expandButtonClass}><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
     </div>
   );
 }

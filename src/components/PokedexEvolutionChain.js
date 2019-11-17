@@ -12,7 +12,7 @@ function PokedexEvolutionChain(props) {
 
   const getPokemonIdFromSpeciesUrl = (speciesUrl) => {
     return speciesUrl.split("/").slice(-2)[0];
-  }
+  };
 
   const onClickFirstEvolution = () => {
     if (secondEvolutionClass === "evolution-hidden") {
@@ -115,7 +115,6 @@ function PokedexEvolutionChain(props) {
       ))}
     </div>
   );
-
   // TO REFACTOR !!!!!
 }
 

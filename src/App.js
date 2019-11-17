@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+
 import PokedexList from './components/PokedexList';
 import PokedexDescription from './components/PokedexDescription';
 import PokedexSummary from './components/PokedexSummary';
 import PokedexImage from './components/PokedexImage';
+import './App.css';
 
 function App() {
   // This is internal state || Array destructuring
@@ -11,8 +12,6 @@ function App() {
   const [pokemon, setPokemon] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [details, setDetails] = useState(null);
-
-  console.log("Pokedex rendering...")
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=1000")
@@ -35,11 +34,11 @@ function App() {
   
   return (
     <div className="pokedex">
-        <PokedexList 
-          pokemon={pokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-        />
+      <PokedexList 
+        pokemon={pokemon}
+        selectedPokemon={selectedPokemon}
+        setSelectedPokemon={setSelectedPokemon}
+      />
       <PokedexDescription selectedPokemon={selectedPokemon} setSelectedPokemon={setSelectedPokemon}/>
       <PokedexImage details={details}/>
       <PokedexSummary details={details}/>

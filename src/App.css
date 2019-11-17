@@ -175,3 +175,11 @@ body {
 .arrow-emoji:active {
   text-shadow: 0rem 0rem 1.5rem #ab0712;
 }
+
+.expand-button {
+
+}
+
+.expand-button-hidden {
+  display: none;
+}
