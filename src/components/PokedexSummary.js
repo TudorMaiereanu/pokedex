@@ -13,6 +13,7 @@ const collectStats = (stats) => {
   return statsList;
 };
 function PokedexSummary(props) {
+  const expandEmojiValue = 0x1F4A2;
   const { details } = props;
   const statsList = details ? collectStats(details.stats) : [];
   
@@ -28,6 +29,7 @@ function PokedexSummary(props) {
           )}
         </>
       )}
+      <button><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
     </div>
   );
 }

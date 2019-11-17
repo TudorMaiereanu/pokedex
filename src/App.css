@@ -90,6 +90,7 @@ body {
   background: black;
   border: 2px solid white;
   padding: 32px;
+  position: relative;
 }
 
 .pokedex-summary h1 {
@@ -97,6 +98,26 @@ body {
   font-weight: normal;
   margin-bottom: 1rem;
   text-transform: uppercase;
+}
+
+.pokedex-summary button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: PokeFont, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+
+.pokedex-summary button:hover {
+  font-size: 2rem !important;
+  text-shadow: 0rem 0rem 2rem white;
+}
+
+.pokedex-summary button:active {
+  text-shadow: 0rem 0rem 1.5rem #ab0712;
 }
 
 .pokedex-property {
