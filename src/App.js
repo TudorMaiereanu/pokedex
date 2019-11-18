@@ -34,7 +34,7 @@ function App() {
   
   return (
     <div className="pokedex">
-      <PokedexList 
+      <PokedexList
         pokemon={pokemon}
         selectedPokemon={selectedPokemon}
         setSelectedPokemon={setSelectedPokemon}
