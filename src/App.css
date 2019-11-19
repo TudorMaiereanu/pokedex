@@ -89,6 +89,10 @@ body {
   outline: none;
 }
 
+.pokedex-list p {
+  text-transform: uppercase;
+}
+
 .pokedex-description {
   background: black;
   border: 2px solid white;

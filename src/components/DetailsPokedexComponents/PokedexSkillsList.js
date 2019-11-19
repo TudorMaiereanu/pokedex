@@ -6,11 +6,13 @@ function PokedexSkillsList(props) {
   
   return (
     <div className="pokedex-list">
+      <p>Moves:</p>
       <ul>
         {details && details.moves.map((moveObj, index)=> {
+          const number = String(index + 1).padStart(2, "0");
           return (
             <li key={index}>
-              <button>{moveObj.move.name}</button>
+              <button><strong>{number}.</strong>{moveObj.move.name}</button>
             </li>
           );
         })}
