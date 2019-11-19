@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 function PokedexList(props) {
   const { pokemon, selectedPokemon, setSelectedPokemon } = props;

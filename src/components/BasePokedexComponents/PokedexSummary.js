@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
+import '../../App.css';
 
 const collectStats = (stats) => {
   const statsList = []
@@ -14,7 +14,7 @@ const collectStats = (stats) => {
 };
 
 function PokedexSummary(props) {
-  const { details } = props;
+  const { details, setPopoverClass } = props;
   const [expandButtonClass, setExpandButtonClass] = useState("expand-button-hidden");
   const expandEmojiValue = 0x1F4A2;
   const statsList = details ? collectStats(details.stats) : [];
@@ -37,7 +37,7 @@ function PokedexSummary(props) {
           )}
         </>
       )}
-      <button className={expandButtonClass}><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
+      <button className={expandButtonClass} onClick={() => setPopoverClass("pokedex-details-popover")}><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
     </div>
   );
 }

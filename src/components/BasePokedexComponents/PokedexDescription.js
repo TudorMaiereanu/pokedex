@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PokedexEvolutionChain from './PokedexEvolutionChain';
-import '../App.css';
+import '../../App.css';
 
 function PokedexDescription(props) {
   const { selectedPokemon, setSelectedPokemon } = props;
