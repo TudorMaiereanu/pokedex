@@ -36,6 +36,29 @@ body {
   padding: 32px;
 }
 
+.pokedex-details-popover {
+  background: #ab0712;
+  border-radius: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  color: white;
+  display: grid;
+  font-family: PokeFont, Menlo, Monaco, Consolas, monospace;
+  gap: 32px;
+  grid-template-columns: 300px 288px 1fr;
+  grid-template-rows: 1fr 288px;
+  height: 600px;
+  line-height: 1.5rem;
+  margin: auto;
+  margin-top: calc(50vh - 300px);
+  max-width: 1024px;
+  padding: 32px;
+  position: relative;
+}
+
+.pokedex-details-popover-hidden {
+  display: none;
+}
+
 .pokedex-list {
   background: black;
   border: 2px solid white;
@@ -100,7 +123,7 @@ body {
   text-transform: uppercase;
 }
 
-.pokedex-summary button{
+.pokedex-summary button {
   background: none;
   border: none;
   cursor: pointer;
@@ -181,4 +204,15 @@ body {
 
 .expand-button-hidden {
   display: none;
+}
+
+.minimize-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: PokeFont, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
 }
