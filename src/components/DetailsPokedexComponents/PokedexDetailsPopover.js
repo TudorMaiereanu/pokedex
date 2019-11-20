@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PokedexSkillsList from './PokedexSkillsList';
+import PokedexMoveDescription from './PokedexMoveDescription';
 import '../../App.css';
 
 function PokedexDetailsPopover(props) {
@@ -9,6 +10,7 @@ function PokedexDetailsPopover(props) {
   return (
     <div className={popoverClass}>
       <PokedexSkillsList details={details}/>
+      <PokedexMoveDescription />
       <button className="minimize-button" onClick={() => setPopoverClass("pokedex-details-popover-hidden")}><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
     </div>
   );
