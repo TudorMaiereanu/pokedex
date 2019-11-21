@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import PokedexList from './components/BasePokedexComponents/PokedexList';
 import PokedexDescription from './components/BasePokedexComponents/PokedexDescription';
 import PokedexSummary from './components/BasePokedexComponents/PokedexSummary';
-import PokedexImage from './components/BasePokedexComponents/PokedexImage';
+import PokedexImage from './components/PokedexImage';
 
 import PokedexDetailsPopover from './components/DetailsPokedexComponents/PokedexDetailsPopover';
 import './App.css';

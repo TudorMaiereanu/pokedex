@@ -6,7 +6,7 @@ function PokedexSkillsList(props) {
   
   return (
     <div className="pokedex-list">
-      <p>Moves:</p>
+    <p>{details.name}'s moves</p>
       <ul>
         {details && details.moves.map((moveObj, index)=> {
           const number = String(index + 1).padStart(2, "0");
