@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 
 function PokedexSkillsList(props) {
-  const { details } = props;
+  const { details, setSelectedMoveObj } = props;
   
   return (
     <div className="pokedex-list">
@@ -10,9 +10,14 @@ function PokedexSkillsList(props) {
       <ul>
         {details && details.moves.map((moveObj, index)=> {
           const number = String(index + 1).padStart(2, "0");
+
           return (
             <li key={index}>
-              <button><strong>{number}.</strong>{moveObj.move.name}</button>
+              <button onClick={() => {
+                setSelectedMoveObj(moveObj);
+              }}>
+                <strong>{number}.</strong>{moveObj.move.name}
+              </button>
             </li>
           );
         })}

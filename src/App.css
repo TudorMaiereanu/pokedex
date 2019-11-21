@@ -59,6 +59,11 @@ body {
   display: none;
 }
 
+.pokedex-move-name {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
 .pokedex-list {
   background: black;
   border: 2px solid white;
