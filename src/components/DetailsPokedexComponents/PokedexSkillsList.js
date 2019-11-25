@@ -26,11 +26,4 @@ function PokedexSkillsList(props) {
   );
 }
 
-// - Accuracy
-// - Power
-// - Damage_class
-// - Contest_type
-// - effect_entries
-
-
 export default PokedexSkillsList;
