@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import PokedexSkillsList from './PokedexSkillsList';
 import PokedexMoveDescription from './PokedexMoveDescription';
 import PokedexImage from '../PokedexImage';
+import PokedexMoveSummary from './PokedexMoveSummary';
 import '../../App.css';
 
 function PokedexDetailsPopover(props) {
   const { details, popoverClass, setPopoverClass } = props;
   const [selectedMoveObj, setSelectedMoveObj] = useState(null);
-  const expandEmojiValue = 0x1F4A2;
+  const [ moveDetails, setMoveDetails ] = useState(null);
 
   return (
     <div className={popoverClass}>
       <PokedexSkillsList details={details} setSelectedMoveObj={setSelectedMoveObj}/>
-      <PokedexMoveDescription selectedMoveObj={selectedMoveObj}/>
+      <PokedexMoveDescription selectedMoveObj={selectedMoveObj} moveDetails={moveDetails} setMoveDetails={setMoveDetails}/>
       <PokedexImage details={details}/>
-      <button className="minimize-button" onClick={() => setPopoverClass("pokedex-details-popover-hidden")}><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
+      <PokedexMoveSummary details={details} setPopoverClass={setPopoverClass} selectedMoveObj={selectedMoveObj} moveDetails={moveDetails}/>
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../../App.css';
 
-function PokedexDetailsPopover(props) {
-  const { selectedMoveObj } = props;
-  const [ moveDetails, setMoveDetails ] = useState(null);
+function PokedexMoveDescription(props) {
+  const { selectedMoveObj, moveDetails, setMoveDetails } = props;
   const [ moveName, setMoveName] = useState(null);
 
   useEffect(() => {
@@ -33,4 +32,4 @@ function PokedexDetailsPopover(props) {
   );
 }
 
-export default PokedexDetailsPopover;
+export default PokedexMoveDescription;

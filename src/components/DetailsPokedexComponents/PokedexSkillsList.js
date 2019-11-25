@@ -31,7 +31,6 @@ function PokedexSkillsList(props) {
 // - Damage_class
 // - Contest_type
 // - effect_entries
-// - flavor_text_entries
 
 
 export default PokedexSkillsList;
