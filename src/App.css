@@ -105,7 +105,7 @@ body {
   grid-column-start: span 2;
   line-height: 1.5rem;
   overflow: scroll;
-  padding: 32px;
+  padding: 24px;
 }
 
 .pokedex-image {
@@ -121,14 +121,13 @@ body {
 .pokedex-summary {
   background: black;
   border: 2px solid white;
-  padding: 32px;
+  padding: 24px;
   position: relative;
 }
 
 .pokedex-summary h1 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: normal;
-  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
@@ -152,9 +151,9 @@ body {
   text-shadow: 0rem 0rem 1.5rem #ab0712;
 }
 
-.pokedex-property {
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
+.pokedex-stat {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
 }
 
 .pokedex-evolution {
