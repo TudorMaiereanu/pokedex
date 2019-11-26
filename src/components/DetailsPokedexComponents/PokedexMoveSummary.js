@@ -25,15 +25,15 @@ function PokedexMoveSummary(props) {
       },
       {
         name: "Damage Class",
-        value: damage_class.name,
+        value: damage_class ? damage_class.name : null,
       }, 
       {
         name: "Contest type",
-        value: contest_type.name,
+        value: contest_type ? contest_type.name : null,
       },
       {
         name: "Type",
-        value: type.name,
+        value: type ? type.name : null,
       },
     ];
   }
@@ -44,9 +44,13 @@ function PokedexMoveSummary(props) {
         <>
           <h1>{extractedMoveDetails.name}</h1>
           {extractedMoveDetails.map(details => 
-              <p className="pokedex-stat">
-                {`${details.name}: ${details.value}`}
-              </p>
+            details.value
+              ?
+                <p className="pokedex-stat">
+                  {`${details.name}: ${details.value}`}
+                </p>
+              :
+                null
           )}
         </>
       )}
