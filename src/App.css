@@ -98,6 +98,10 @@ body {
   text-transform: uppercase;
 }
 
+.pokedex-list ul {
+  margin-bottom: 1rem;
+}
+
 .pokedex-description {
   background: black;
   border: 2px solid white;
