@@ -44,7 +44,7 @@ function PokedexMoveSummary(props) {
         <>
           <h1>{extractedMoveDetails.name}</h1>
           {extractedMoveDetails.map(details => 
-              <p className="pokedex-property">
+              <p className="pokedex-stat">
                 {`${details.name}: ${details.value}`}
               </p>
           )}

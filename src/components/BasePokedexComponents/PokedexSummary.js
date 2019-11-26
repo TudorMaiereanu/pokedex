@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
 
-const collectStats = (stats) => {
-  const statsList = []
+const collectStats = (details) => {
+  const { stats, base_experience, weight } = details;
+  const statsList = [];
+
+  statsList.push({
+    name: 'base-experience',
+    value: base_experience,
+  });
+
+  statsList.push({
+    name: 'weight',
+    value: weight,
+  });
+
   stats.forEach(stat => {
     statsList.push({
       name: stat.stat.name,
@@ -17,7 +29,7 @@ function PokedexSummary(props) {
   const { details, setPopoverClass } = props;
   const [expandButtonClass, setExpandButtonClass] = useState("expand-button-hidden");
   const expandEmojiValue = 0x1F4A2;
-  const statsList = details ? collectStats(details.stats) : [];
+  const statsList = details ? collectStats(details) : [];
 
   useEffect(() => {
     if (details != null) {
@@ -31,7 +43,7 @@ function PokedexSummary(props) {
         <>
           <h1>{details.id + "." + details.name}</h1>
           {statsList.map(stat => 
-              <p className="pokedex-property">
+              <p className="pokedex-stat">
                 {`${stat.name}: ${stat.value}`}
               </p>
           )}
