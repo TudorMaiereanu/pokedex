@@ -155,6 +155,16 @@ body {
   text-shadow: 0rem 0rem 1.5rem #ab0712;
 }
 
+.pokedex-summary-effect-text {
+  font-weight: 900;
+  display: inline;
+  font-size: 0.9rem;
+}
+.pokedex-summary-effect {
+  display: inline;
+  font-size: 0.8rem;
+}
+
 .pokedex-stat {
   margin-top: 0.4rem;
   font-size: 0.7rem;

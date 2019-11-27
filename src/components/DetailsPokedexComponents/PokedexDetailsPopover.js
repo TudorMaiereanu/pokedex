@@ -14,13 +14,19 @@ function PokedexDetailsPopover(props) {
 
   return (
     <div className={popoverClass}>
-      <PokedexSkillsList details={details} setSelectedMoveObj={setSelectedMoveObj} setSelectedAbilityObj={setSelectedAbilityObj}/>
+      <PokedexSkillsList details={details}
+        setSelectedMoveObj={setSelectedMoveObj}
+        setSelectedAbilityObj={setSelectedAbilityObj}
+      />
       <PokedexMoveDescription 
         selectedMoveObj={selectedMoveObj} setSelectedMoveObj={setSelectedMoveObj} moveDetails={moveDetails} setMoveDetails={setMoveDetails}
         selectedAbilityObj={selectedAbilityObj} setSelectedAbilityObj={setSelectedAbilityObj} abilityDetails={abilityDetails} setAbilityDetails={setAbilityDetails}
       />
       <PokedexImage details={details}/>
-      <PokedexMoveSummary details={details} setPopoverClass={setPopoverClass} selectedMoveObj={selectedMoveObj} moveDetails={moveDetails}/>
+      <PokedexMoveSummary details={details} setPopoverClass={setPopoverClass}
+        moveDetails={moveDetails}
+        abilityDetails={abilityDetails}
+      />
     </div>
   );
 }

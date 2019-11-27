@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 
 function PokedexMoveSummary(props) {
-  const { moveDetails, setPopoverClass } = props;
+  const { moveDetails, abilityDetails, setPopoverClass } = props;
   const expandEmojiValue = 0x1F4A2;
 
   let extractedMoveDetails = null;
@@ -38,6 +38,12 @@ function PokedexMoveSummary(props) {
     ];
   }
 
+  let extractedShortEffect = null;
+  if (abilityDetails != null) {
+    const { effect_entries } = abilityDetails;
+    extractedShortEffect = effect_entries.map(effectObj => effectObj.short_effect);
+  }
+
   return (
     <div className="pokedex-summary">
       {extractedMoveDetails != null && (
@@ -52,6 +58,12 @@ function PokedexMoveSummary(props) {
               :
                 null
           )}
+        </>
+      )}
+      {extractedShortEffect != null && (
+        <>
+          <p className="pokedex-summary-effect-text">Effect: </p>
+          {extractedShortEffect.map(effect => <p className="pokedex-summary-effect">{effect}</p>)}
         </>
       )}
       <button className="minimize-button" onClick={() => setPopoverClass("pokedex-details-popover-hidden")}><p>{String.fromCodePoint(expandEmojiValue)}</p></button>
