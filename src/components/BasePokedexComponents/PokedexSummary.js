@@ -43,9 +43,9 @@ function PokedexSummary(props) {
         <>
           <h1>{details.id + "." + details.name}</h1>
           {statsList.map(stat => 
-              <p className="pokedex-stat">
-                {`${stat.name}: ${stat.value}`}
-              </p>
+            <p className="pokedex-stat">
+              {`${stat.name}: ${stat.value}`}
+            </p>
           )}
         </>
       )}

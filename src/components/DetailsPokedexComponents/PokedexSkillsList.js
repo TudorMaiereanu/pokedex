@@ -13,15 +13,14 @@ function PokedexSkillsList(props) {
 
           return (
             <li key={index}>
-              <button onClick={() => {
-                setSelectedAbilityObj(abilityObj);
-              }}>
+              <button onClick={() => {setSelectedAbilityObj(abilityObj);}}>
                 <strong>{number}.</strong>{abilityObj.ability.name}
               </button>
             </li>
           );
         })}
       </ul>
+
       <p>{details.name}'s moves</p>
       <ul>
         {details && details.moves.map((moveObj, index)=> {
@@ -29,9 +28,7 @@ function PokedexSkillsList(props) {
 
           return (
             <li key={index}>
-              <button onClick={() => {
-                setSelectedMoveObj(moveObj);
-              }}>
+              <button onClick={() => {setSelectedMoveObj(moveObj);}}>
                 <strong>{number}.</strong>{moveObj.move.name}
               </button>
             </li>

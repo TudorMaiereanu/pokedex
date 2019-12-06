@@ -13,13 +13,7 @@ function PokedexList(props) {
 
           return (
             <li key={p.name}>
-              <button 
-                className={buttonClass}
-                onClick={() => {
-                  setSelectedPokemon(p.name);
-                  console.log("Pokemon", p.name, "was selected.")
-                }
-              }>
+              <button className={buttonClass} onClick={() => {setSelectedPokemon(p.name);}}>
                 <strong>{number}</strong> {p.name}
               </button>
             </li>

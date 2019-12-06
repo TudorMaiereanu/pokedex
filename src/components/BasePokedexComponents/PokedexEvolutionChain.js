@@ -51,7 +51,6 @@ function PokedexEvolutionChain(props) {
     }
   }, [evolutionChainUrl]);
 
-  // TO REFACTOR !!!!!
   let evolutions;
   if (evolutionDetails != null) {
     let evolution = evolutionDetails;
@@ -64,7 +63,6 @@ function PokedexEvolutionChain(props) {
     ];
 
     let secondEvolutions = evolution.evolves_to;
-
     secondEvolutions.forEach((evolutionObj) => {
       evolutions[0].evolutions.push({
         name: evolutionObj.species.name,
@@ -87,8 +85,18 @@ function PokedexEvolutionChain(props) {
             <button className="evolution" disabled>
               {'1.' + firstEvolutionObj.name}
             </button>
-            <button className="look-into-emoji" onClick={() => setSelectedPokemon(getPokemonIdFromSpeciesUrl(firstEvolutionObj.url))}><p>{String.fromCodePoint(lookIntoEmojiValue)}</p></button>
-            {firstEvolutionObj.evolutions.length !== 0 && <button className="arrow-emoji" onClick={() => onClickFirstEvolution()}><p>{String.fromCodePoint(showMoreFirstEmojiValue)}</p></button>}
+            <button className="look-into-emoji" onClick={() => setSelectedPokemon(getPokemonIdFromSpeciesUrl(firstEvolutionObj.url))}>
+              <p>
+                {String.fromCodePoint(lookIntoEmojiValue)}
+              </p>
+            </button>
+            {firstEvolutionObj.evolutions.length !== 0 &&
+              <button className="arrow-emoji" onClick={() => onClickFirstEvolution()}>
+                <p>
+                  {String.fromCodePoint(showMoreFirstEmojiValue)}
+                </p>
+              </button>
+            }
           </div>
 
           {firstEvolutionObj && firstEvolutionObj.evolutions.map((secondEvolutionObj) => (
@@ -97,26 +105,38 @@ function PokedexEvolutionChain(props) {
                 <button className={secondEvolutionClass} disabled>
                   {'2.' + secondEvolutionObj.name}
                 </button>
-                <button className="look-into-emoji" onClick={() => setSelectedPokemon(getPokemonIdFromSpeciesUrl(secondEvolutionObj.url))}><p className={secondEvolutionClass}>{String.fromCodePoint(lookIntoEmojiValue)}</p></button>
-                {secondEvolutionObj.evolutions.length !== 0 && <button className="arrow-emoji" onClick={() => onClickSecondEvolution()}><p className={secondEvolutionClass}>{String.fromCodePoint(showMoreSecondEmojiValue)}</p></button>}
+                <button className="look-into-emoji" onClick={() => setSelectedPokemon(getPokemonIdFromSpeciesUrl(secondEvolutionObj.url))}>
+                  <p className={secondEvolutionClass}>
+                    {String.fromCodePoint(lookIntoEmojiValue)}
+                  </p>
+                </button>
+                {secondEvolutionObj.evolutions.length !== 0 &&
+                  <button className="arrow-emoji" onClick={() => onClickSecondEvolution()}>
+                    <p className={secondEvolutionClass}>
+                      {String.fromCodePoint(showMoreSecondEmojiValue)}
+                    </p>
+                  </button>
+                }
               </div>
 
               {secondEvolutionObj && secondEvolutionObj.evolutions.map((thirdEvolutionObj) => (
                 <div className="evolution-button-box">
-                  <button className={thirdEvolutionClass} disabled>{'3.' + thirdEvolutionObj.name}</button>
-                  <button className="look-into-emoji" onClick={() => setSelectedPokemon(getPokemonIdFromSpeciesUrl(thirdEvolutionObj.url))}><p className={thirdEvolutionClass}>{String.fromCodePoint(lookIntoEmojiValue)}</p></button>
+                  <button className={thirdEvolutionClass} disabled>
+                    {'3.' + thirdEvolutionObj.name}
+                  </button>
+                  <button className="look-into-emoji" onClick={() => setSelectedPokemon(getPokemonIdFromSpeciesUrl(thirdEvolutionObj.url))}>
+                    <p className={thirdEvolutionClass}>
+                      {String.fromCodePoint(lookIntoEmojiValue)}
+                    </p>
+                  </button>
                 </div>
               ))}
-
             </div>
-           ))}
-
+          ))}
         </div>
       ))}
     </div>
   );
-  // TO REFACTOR !!!!!
 }
-
 
 export default PokedexEvolutionChain;
